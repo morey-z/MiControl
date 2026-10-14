@@ -14,3 +14,5 @@
 在提交前以 `SOURCE_MANIFEST.json` 的相对路径、字节数和 SHA-256 逐项复核：114 个原始 entries 中有 112 个保持原值；`.gitignore` 从 262 字节变为 320 字节（新 SHA-256：`1995C4090C9C532E4C15626FC66C79A50A37B3974D85C1579BB6BDE1C83E56ED`），`README.md` 从 3,935 字节变为 6,080 字节（新 SHA-256：`AE32F8780A511223EDEE69FD6F9078BE96B0B749C48A70E1CDA1FE433B934F8A`）；新增 `CHANGELOG.md` 和本文件各 1 个。未发现缺失文件或额外源码目录。
 
 本发布不添加 GitHub Actions 或其它自动部署工作流，也不上传日志、备份注册表、`.env`、凭据、密钥、缓存、`target`、`node_modules`、历史包或用户状态。
+
+README 下载链接固定指向 `https://github.com/morey-z/MiControl/releases/tag/v2.0.7-rc1`，因为该版本是 prerelease，不能依赖 `/releases/latest`。

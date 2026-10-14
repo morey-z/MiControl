@@ -10,7 +10,7 @@ MiControl 是面向 Windows 的小米 RC001 / RC003 蓝牙语音遥控器桥接�
 - 安装器兼容逻辑支持带 operation id 的新参数形态，同时保留旧参数形态，拒绝非法参数和不匹配的 helper 路径。
 - 安装、服务和诊断路径补充阶段化错误日志，便于区分参数校验、权限、helper、SCM 和 broker health 阶段。
 
-安装包和源码归档从本仓库的 [Releases](../../releases) 页面下载：
+安装包和源码归档从本仓库的 [`v2.0.7-rc1` Release](https://github.com/morey-z/MiControl/releases/tag/v2.0.7-rc1) 页面下载：
 
 - `MiControl_2.0.7-rc1_x64-setup.exe`（SHA-256：`083B44F35B05A1320149DFAFDC8A6993A232D64E33C87F6D13DE3B99AE407A7E`）
 - `MiControl_2.0.7-rc1_Source.zip`（SHA-256：`B87C0A760F77F8939A5858C6680D1850D605FFBFCD495B2589EB591007246B10`）
