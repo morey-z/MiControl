@@ -1,0 +1,790 @@
+{
+  "schema": "micontrol-source-manifest-v1",
+  "product": "MiControl",
+  "version": "2.0.7",
+  "candidateLabel": "rc1",
+  "generatedAt": "2026-10-14T02:04:08.2934569Z",
+  "sourceRepository": "D:\\d\\MiControl-source\\Lucasmantou-MiControl-b445dc1",
+  "repositoryHasGitSnapshot": false,
+  "packageRoot": "MiControl-2.0.7-rc1-source",
+  "entryCount": 114,
+  "totalBytes": 26682389,
+  "manifestSelfExcluded": true,
+  "entries": [
+    {
+      "path": ".gitignore",
+      "bytes": 262,
+      "sha256": "2A854179A27B5C2075D0866CDECE0B6F5F629AE5649664210D5DBFE55919BECA"
+    },
+    {
+      "path": "Cargo.lock",
+      "bytes": 124756,
+      "sha256": "B60DD590A1349FF735C861E4982CDF707DE0D970E7A4A049D7455D211F1B0158"
+    },
+    {
+      "path": "Cargo.toml",
+      "bytes": 532,
+      "sha256": "A5252673D9EC5CCA90C7B6E247F7CE70211354DF838F2394041214249C512289"
+    },
+    {
+      "path": "crates/micontrol-core/Cargo.toml",
+      "bytes": 251,
+      "sha256": "425FDEA5D7E88A76BFA6524895D7E9853A7E2A4F96A2FCA5C7392F158A292D95"
+    },
+    {
+      "path": "crates/micontrol-core/src/adpcm.rs",
+      "bytes": 3562,
+      "sha256": "71DD455AD0E7D3E01EA1AA5C81438CFB0D67FBC2950C7B59C8B2CFCFE1468C12"
+    },
+    {
+      "path": "crates/micontrol-core/src/atvv.rs",
+      "bytes": 7869,
+      "sha256": "5F186F49F989B272477625A0DD81CB8BD430DA2A312CB5892E588A852B66F80E"
+    },
+    {
+      "path": "crates/micontrol-core/src/frame.rs",
+      "bytes": 1157,
+      "sha256": "168F1F0ED60D4192CE82B1A097DF69B62F3FD28D37DDDC946533622F50451586"
+    },
+    {
+      "path": "crates/micontrol-core/src/lib.rs",
+      "bytes": 599,
+      "sha256": "0274FA0BE33D1CD03BE7A5447B770D8F8828F7F87C162F338DE2036EF602C716"
+    },
+    {
+      "path": "crates/micontrol-core/src/pcm.rs",
+      "bytes": 1254,
+      "sha256": "52DB60D10650920A7CA2D9465FECAF1E755AAEDAB91745FF693988F466A518EA"
+    },
+    {
+      "path": "crates/micontrol-core/src/pipeline.rs",
+      "bytes": 11895,
+      "sha256": "405C36796DC52E0976C01C24C1EE9A63C111E846EBEA8FD3BA590DABE8C032C2"
+    },
+    {
+      "path": "crates/micontrol-core/src/settings.rs",
+      "bytes": 3449,
+      "sha256": "0C6CCC425B69B1F9D264D9112FB933DF2E5F10666D504C3D71794D31812F9C50"
+    },
+    {
+      "path": "crates/micontrol-core/src/statistics.rs",
+      "bytes": 4723,
+      "sha256": "01EB9827D766A01AC47AC80793015537926582C61F83964F25B2BE009B3536CA"
+    },
+    {
+      "path": "crates/micontrol-core/src/voice.rs",
+      "bytes": 5236,
+      "sha256": "943BF3031C9B7BFB60FFA27DBC2DFA0EF0DC830BCA15DDD01D494A99F570633C"
+    },
+    {
+      "path": "crates/micontrol-core/tests/fixtures/rc001-short-voice.json",
+      "bytes": 918,
+      "sha256": "318A58696350655EDD56C20009D79AFC396077D15BAA97CB49280EE8A2CB07EF"
+    },
+    {
+      "path": "crates/micontrol-core/tests/rc001_scenario_replay.rs",
+      "bytes": 8566,
+      "sha256": "2B00EA8421F686F8091A1B48E24CABD4EF9F0E0DFDFDAAA5589169C0B353D90E"
+    },
+    {
+      "path": "crates/micontrol-windows/Cargo.toml",
+      "bytes": 1656,
+      "sha256": "E24CCBAC008C7DC7C7CD0442B0AF3F0B104FF8E58BC4D8E30C1955DA41FA5900"
+    },
+    {
+      "path": "crates/micontrol-windows/src/app_launcher.rs",
+      "bytes": 38847,
+      "sha256": "BD5CA1BEDB11515966032C39C2E4402A61CF838530D549009297377EF4ED5341"
+    },
+    {
+      "path": "crates/micontrol-windows/src/audio.rs",
+      "bytes": 56947,
+      "sha256": "CBB33D27A00C38DEDBC40387C3721563E13EA179DEB94662A1CE9AD5F01DB519"
+    },
+    {
+      "path": "crates/micontrol-windows/src/battery.rs",
+      "bytes": 10674,
+      "sha256": "7BDB4D3AA750DBCE0D099743E2B1D84C3480D1359AB7005D679B1DA388B0D47F"
+    },
+    {
+      "path": "crates/micontrol-windows/src/bin/micontrol-service-cleanup.rs",
+      "bytes": 7442,
+      "sha256": "21E9FB809E1E1187502A6349AF9D08191137EC9789C99073BDA43E2C32D14DB5"
+    },
+    {
+      "path": "crates/micontrol-windows/src/ble.rs",
+      "bytes": 122117,
+      "sha256": "D63E04A9D5DED70FBD20B5CD166414C12B6EB7E8CCFBFBD6BE361BB5A22F42CB"
+    },
+    {
+      "path": "crates/micontrol-windows/src/bluetooth_radio.rs",
+      "bytes": 36388,
+      "sha256": "B10E59837651CD25E29845E14ABD275145001FC61F721A62822B6AF4C01B00E3"
+    },
+    {
+      "path": "crates/micontrol-windows/src/button_gestures.rs",
+      "bytes": 23616,
+      "sha256": "F825A8347EE343B179D0F86F5BDCF78B969B89F50F8525DCC2D6A4E01E5AAADF"
+    },
+    {
+      "path": "crates/micontrol-windows/src/button_mapping.rs",
+      "bytes": 66764,
+      "sha256": "9ECB1D675B6FC524175B92BDB307CF9199FDB5AD9176F030FF0CFEA4DCAA5C07"
+    },
+    {
+      "path": "crates/micontrol-windows/src/compatibility.rs",
+      "bytes": 3497,
+      "sha256": "289D8FE5D2720F31F6811807BB17BB87CCB4738ACD7DB743012A9EA1A7362D6B"
+    },
+    {
+      "path": "crates/micontrol-windows/src/file_dialog.rs",
+      "bytes": 7462,
+      "sha256": "9B64FCD62728CCB50DDE381E41704ACECFF0ADDB021A86AC12854F9CC6636FF4"
+    },
+    {
+      "path": "crates/micontrol-windows/src/graceful_exit.rs",
+      "bytes": 6393,
+      "sha256": "CCF1706D6636E3B4BDA7F189602FE2195CA6E87786D5063D9986020655687358"
+    },
+    {
+      "path": "crates/micontrol-windows/src/hid_tap_service.rs",
+      "bytes": 237200,
+      "sha256": "F5CB72FF200B75574233B6BFD8D837CE4EC9D2AB81C01518B3358A03C0FEB361"
+    },
+    {
+      "path": "crates/micontrol-windows/src/hid_tap_windows.rs",
+      "bytes": 83493,
+      "sha256": "D4222E5B2E9971C85418B793D868FFCBDE532467F50295B668688C45D7EED71A"
+    },
+    {
+      "path": "crates/micontrol-windows/src/hid_tap.rs",
+      "bytes": 2924,
+      "sha256": "FA9B3612130B1E73132E0812EE7305DB4BE49F978DDA5C7EA3605F566DCDF2BA"
+    },
+    {
+      "path": "crates/micontrol-windows/src/ime.rs",
+      "bytes": 16083,
+      "sha256": "A31743F37ED9D34E477269AF0B94C3F2B7A84715E04B197C6D68CA81CC728AB5"
+    },
+    {
+      "path": "crates/micontrol-windows/src/installer_compat.rs",
+      "bytes": 39915,
+      "sha256": "47F121A2A30D596038F925D8A2B5646144C10CAA468203A1CECFA0CB5A8B0007"
+    },
+    {
+      "path": "crates/micontrol-windows/src/key_gate.rs",
+      "bytes": 38245,
+      "sha256": "7BD479410D2FDC1C527BE340F78D93E78D37B16A7D323B79A725199584900A6A"
+    },
+    {
+      "path": "crates/micontrol-windows/src/key_suppressor.rs",
+      "bytes": 22094,
+      "sha256": "C9E07979E476E5D270C0BBBB5645485EC98F55A17CA3867B370A05471BF64FA4"
+    },
+    {
+      "path": "crates/micontrol-windows/src/lib.rs",
+      "bytes": 30412,
+      "sha256": "B46E60F4D5B801FDB16B22C68E59FA1ADF75107ED024F850368805E479592C6D"
+    },
+    {
+      "path": "crates/micontrol-windows/src/lock_open_with_guard.rs",
+      "bytes": 8396,
+      "sha256": "C0D73F4D5DC0D5D04FD0D0B50B101427C2C6F43335A5614DF0AD1C1D5A08AA8B"
+    },
+    {
+      "path": "crates/micontrol-windows/src/power.rs",
+      "bytes": 5450,
+      "sha256": "02C8DBAAF336BB1032BDD622E7E825E8579CB7E95531877BEADEA073502F7643"
+    },
+    {
+      "path": "crates/micontrol-windows/src/raw_input_windows.rs",
+      "bytes": 28312,
+      "sha256": "5703DFF319DFFB921D64F788279CBA40587121EC5940998311AB54B4815F4A28"
+    },
+    {
+      "path": "crates/micontrol-windows/src/raw_input.rs",
+      "bytes": 16451,
+      "sha256": "33967EF2AB28BF936039D15E3481F4880C74CB01960EF6E49CCC65D70775A375"
+    },
+    {
+      "path": "crates/micontrol-windows/src/rc003_hid_tap.js",
+      "bytes": 3971,
+      "sha256": "6633749EFA3C5354B3E3A871088627E2E5CF47A043FCABE362C5CC3534C0AFA3"
+    },
+    {
+      "path": "crates/micontrol-windows/src/reconnect.rs",
+      "bytes": 2060,
+      "sha256": "4482EE7E6ADCB2814C646D0C24B15E2748C755F40185724C0B3754B694491747"
+    },
+    {
+      "path": "crates/micontrol-windows/src/registered_apps.rs",
+      "bytes": 8839,
+      "sha256": "89F62BBCBE35A3D45495FD726324548EFFB3C1D04CE72EC9DEABEE1D730B9697"
+    },
+    {
+      "path": "crates/micontrol-windows/src/resource_probe.rs",
+      "bytes": 11155,
+      "sha256": "F53502E09E9CACD2B4824EFDAD891919129D587B2B913889034FA2BDFE846BC8"
+    },
+    {
+      "path": "crates/micontrol-windows/src/send_input_windows.rs",
+      "bytes": 17215,
+      "sha256": "F270DF71923247405DBE591BB0A0DB1B8033ADE93A906021ABC96BD554140948"
+    },
+    {
+      "path": "crates/micontrol-windows/src/send_input.rs",
+      "bytes": 39967,
+      "sha256": "9D1B28FC8B1EBE332C1F3CC60A3504E6702C9138A650071C0100485465FAFBB7"
+    },
+    {
+      "path": "crates/micontrol-windows/src/wetype_revive.rs",
+      "bytes": 7157,
+      "sha256": "0B0998FDC07664DA4EA9C9547631E3421EB3D6ABA432B610D691918CDD46FA22"
+    },
+    {
+      "path": "crates/micontrol-windows/tests/diagnostic_log.rs",
+      "bytes": 1445,
+      "sha256": "63D5E07E1BDF771B463A8EBD8FE40136D2ABED13C7F2C03A4A0E92BC819CE6F1"
+    },
+    {
+      "path": "index.html",
+      "bytes": 846,
+      "sha256": "1806F80C828EA28727321D1FD09E7D2E8EEDE473A982A0D7512EC9D9FF53D47F"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "sha256": "3972DC9744F6499F0F9B2DBF76696F2AE7AD8AF9B23DDE66D6AF86C9DFB36986"
+    },
+    {
+      "path": "package.json",
+      "bytes": 759,
+      "sha256": "0B7C71E497448AF830894751AB952ED8B5C49A3BB754A84C339AB81F5A8967C8"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 60111,
+      "sha256": "0EBE73372EE3E6D38E36E6DF00CCB453F51E34E2711717964D71E181A3704AEE"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 29,
+      "sha256": "AC02D96368617C760F093CFE61FDEC64B6244007AB3553E0D6621F706F54A353"
+    },
+    {
+      "path": "public/app-logo.png",
+      "bytes": 288056,
+      "sha256": "10AA8071AF46E4934C4B3C5C6CD5707B67ED291060CB69849D80FF637DB38B7A"
+    },
+    {
+      "path": "public/favicon.png",
+      "bytes": 1950,
+      "sha256": "559CEB251E70DE7589FA919F670FD8BF6AA2A15FF263F94EF507981B4360CEEA"
+    },
+    {
+      "path": "public/RC003-remote-photo@2x.png",
+      "bytes": 320484,
+      "sha256": "8F91F921B1E3EEE47B7CF84BE4C16AE04DF68E26B3A225C2F8E8F1FC2F06AC11"
+    },
+    {
+      "path": "README_源码说明.txt",
+      "bytes": 4155,
+      "sha256": "1BDED1F99E8456B91C0132CF74CEA6E417101E31C81888AF0D4518351E962882"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3935,
+      "sha256": "A4ABDB6FBA6924E26F844232BA31F8ED1DCD07F2AC39E273DC68F379FB91CF3E"
+    },
+    {
+      "path": "Screenshots/key-mapping.png",
+      "bytes": 618395,
+      "sha256": "519AADAF2757D8B9252A0903A52B52A4792BA80B0203A66FFD66AC9106781744"
+    },
+    {
+      "path": "scripts/build-micontrol-candidate.ps1",
+      "bytes": 30734,
+      "sha256": "5A26896222FDA4C8A54FA3D0F19039173298CA374774DA4BEEF3AB97C6964A3B"
+    },
+    {
+      "path": "scripts/fetch-hid-tap.ps1",
+      "bytes": 1238,
+      "sha256": "8274F394226194DA2D2AD108B30AB040E9CF514CB20D55EC99BBF21E1C30EAF3"
+    },
+    {
+      "path": "scripts/README-rc003-verification.zh-CN.md",
+      "bytes": 3750,
+      "sha256": "9C23983AAFFF55E9752676497296030A1C2414FCB0AED60C8D6A7E19B3D5376C"
+    },
+    {
+      "path": "scripts/verify-micontrol-rc003.ps1",
+      "bytes": 7914,
+      "sha256": "C16F8490EA9AE5F6B56DFAB03FC235549AC45650BEBABBB112489362E3BBBD37"
+    },
+    {
+      "path": "scripts/write-micontrol-release-manifest.ps1",
+      "bytes": 2583,
+      "sha256": "AFE37A09EB4924A66D07140EAE3911BC617887E10F15C18847F469D55040E581"
+    },
+    {
+      "path": "src-tauri/build.rs",
+      "bytes": 798,
+      "sha256": "484A3EDFC790B44ED6B274DA01D9BAFDB38178872294CEB4128AB41922B747BE"
+    },
+    {
+      "path": "src-tauri/capabilities/default.json",
+      "bytes": 354,
+      "sha256": "199651BE5550717C739D26E91D5AE65F3D98EF9F28B18C75D547440612DA5506"
+    },
+    {
+      "path": "src-tauri/Cargo.toml",
+      "bytes": 811,
+      "sha256": "01D6A622BDB492D0CA91BAC66AF14140C2F312262FBA029D42C9539C974189E2"
+    },
+    {
+      "path": "src-tauri/icons/128x128.png",
+      "bytes": 13945,
+      "sha256": "E6436D426A294D6F9A8A169F9B808864C55E5B646B67D5244632A847316B7E5E"
+    },
+    {
+      "path": "src-tauri/icons/128x128@2x.png",
+      "bytes": 38646,
+      "sha256": "68BC1CEB49C1DD42BC366F39B03F8560DA266A923735B15B476B774A341C9F2B"
+    },
+    {
+      "path": "src-tauri/icons/32x32.png",
+      "bytes": 1950,
+      "sha256": "559CEB251E70DE7589FA919F670FD8BF6AA2A15FF263F94EF507981B4360CEEA"
+    },
+    {
+      "path": "src-tauri/icons/icon.ico",
+      "bytes": 50873,
+      "sha256": "83CF22FB3A1C9FE7990E9AECC11ECA93A41021B1907609C5E201A361C25D001C"
+    },
+    {
+      "path": "src-tauri/resources/hid-tap/frida-COPYING.txt",
+      "bytes": 2416,
+      "sha256": "5EA1544B51A28BC823B03159190D4108F9FB4F4EF912389F5137C6D295E175B2"
+    },
+    {
+      "path": "src-tauri/resources/hid-tap/frida-gadget.dll",
+      "bytes": 23575552,
+      "sha256": "6FCA4007B2284C765A6C15C967A741F536B5865BF83867326A54029A3B752748"
+    },
+    {
+      "path": "src-tauri/src/hid_tap_service.rs",
+      "bytes": 27664,
+      "sha256": "4C50A302D3B30D750359BCEAF7E7893B4E671E574F8035CE6FFDAEB639FFB9D6"
+    },
+    {
+      "path": "src-tauri/src/lib.rs",
+      "bytes": 76915,
+      "sha256": "7B2034DD8B4D55B8597B1CB8CEF5D58F06F4A9E8E06F37DC8E57CAA165C063F7"
+    },
+    {
+      "path": "src-tauri/src/main.rs",
+      "bytes": 236,
+      "sha256": "DE9751B1EFDD3A90F3275C095A842B1C4CCDEC6A703F592BE2392A5C5E173652"
+    },
+    {
+      "path": "src-tauri/src/platform.rs",
+      "bytes": 26808,
+      "sha256": "16C3C1BA2DE76B102D92755EF1DA7FDEA8328E07DBA4CD72F752CC1F96DAECFA"
+    },
+    {
+      "path": "src-tauri/src/settings.rs",
+      "bytes": 23033,
+      "sha256": "C977088718C82E612296377360F0C4D4B3672F8E4187E072EE2330DBF6AAB659"
+    },
+    {
+      "path": "src-tauri/src/startup.rs",
+      "bytes": 9458,
+      "sha256": "C4407B843BB61FC3F11A8AE29E406EE8933B4D61BFAA0DC7523BBA26554803E1"
+    },
+    {
+      "path": "src-tauri/tauri.conf.json",
+      "bytes": 1949,
+      "sha256": "3E3CA36CC47CD1BE4FAB4BA0925FC00DC084D2BE8A4560FD7BEA15C421D99937"
+    },
+    {
+      "path": "src-tauri/windows/installer-hooks.nsh",
+      "bytes": 16467,
+      "sha256": "EF52DD03E5FD16C44124369451857EE2A895E98CA3D5A0FB98761A0C9DB467B7"
+    },
+    {
+      "path": "src/App.vue",
+      "bytes": 3492,
+      "sha256": "56C731A688ED89678FD694A229BE8592F51C4242E9253DBB9BDEF36CA549BC7A"
+    },
+    {
+      "path": "src/components/BatteryIndicator.test.ts",
+      "bytes": 1897,
+      "sha256": "41402D6F4163C7CD42050E0D1C8EA04A28589638CBB42BBFE0EAEBDAB2B85F04"
+    },
+    {
+      "path": "src/components/BatteryIndicator.vue",
+      "bytes": 1914,
+      "sha256": "55CBFF2B49EC28E45151CEAE68DFCA6BE27E628DF11A95D501F3166A8329546E"
+    },
+    {
+      "path": "src/components/BottomNav.vue",
+      "bytes": 2367,
+      "sha256": "2C48B57FA01E856063F221F840F30FBF50A3E0E9EDDBCBDFD39B52BEFA418DF5"
+    },
+    {
+      "path": "src/components/RegisteredAppsDialog.test.ts",
+      "bytes": 2736,
+      "sha256": "A68233D312C181133D8719DE53AADD1B6A7D2DB900C171E080A75BA5A1E3EFC1"
+    },
+    {
+      "path": "src/components/RegisteredAppsDialog.vue",
+      "bytes": 5811,
+      "sha256": "AB0E6EA7EA8556DC8A616C814D38D9875C72A3FF1A3354CF258CA3212B4427D2"
+    },
+    {
+      "path": "src/frontend-lifecycle.test.ts",
+      "bytes": 2992,
+      "sha256": "353CD56D17BFF7CACBDB972242808664E7B7B732BF82DDBD72319AC863EF6C2A"
+    },
+    {
+      "path": "src/lib/bridge.test.ts",
+      "bytes": 5176,
+      "sha256": "33D8DC2FF8E5F864606E440FC2B3FF1DB707D79C46BE5EB5206C4757BCAC906F"
+    },
+    {
+      "path": "src/lib/bridge.ts",
+      "bytes": 26073,
+      "sha256": "06D0A98CED9A078443D879A0712DFA162084EFD52BBAF0D3E44C665A0AC052F8"
+    },
+    {
+      "path": "src/lib/focus-modality.test.ts",
+      "bytes": 2617,
+      "sha256": "AEB48F6775029CB31029C42436D7BDAD0971B716F542B9CDBFB9F23018047ED5"
+    },
+    {
+      "path": "src/lib/focus-modality.ts",
+      "bytes": 1367,
+      "sha256": "1021E41C39FF4DAE17CDF0EA36478323F7C713A6F1551DFE4111D641670BDCC3"
+    },
+    {
+      "path": "src/lib/frontend-diagnostics.ts",
+      "bytes": 1427,
+      "sha256": "0BF9D50BEE91D1F7522427FB7A13D62FC033FFCAFB29055E70EFB1E2E81B9144"
+    },
+    {
+      "path": "src/lib/theme.test.ts",
+      "bytes": 4047,
+      "sha256": "3DEA91AE349714F293BD8D8E1CB9D319DB62BF031D7845DB9E8D1615155E66A0"
+    },
+    {
+      "path": "src/lib/theme.ts",
+      "bytes": 7892,
+      "sha256": "2EFED79DDB61E959F7102F0CFDF4CB792ECD8A5F3DADD8524F487991645348B6"
+    },
+    {
+      "path": "src/main.ts",
+      "bytes": 1915,
+      "sha256": "0B09E57AF7640CC3A4DA6533F5B638225041BEA9F49ADD9DA905849CE550E4AE"
+    },
+    {
+      "path": "src/navigation.test.ts",
+      "bytes": 3145,
+      "sha256": "07C110F66D56809EDCC44A890EDC75A535F94BF3A1609197F17E343B681E8870"
+    },
+    {
+      "path": "src/navigation.ts",
+      "bytes": 2780,
+      "sha256": "769B9BB507C95155D1A5E943DE5D7FE2057372B1C74CF44E4EE08635235F1995"
+    },
+    {
+      "path": "src/pages/AboutPage.test.ts",
+      "bytes": 3364,
+      "sha256": "69AC1E382C0D1F3697C272BCECAB95FB9451B4A5D22FF6AA8DD76C09FC068335"
+    },
+    {
+      "path": "src/pages/AboutPage.vue",
+      "bytes": 4494,
+      "sha256": "F75FE7F009FF6384618B6948600C7A2FC3309E47F1C60A697FD04124F7CB2287"
+    },
+    {
+      "path": "src/pages/ButtonsPage.test.ts",
+      "bytes": 31767,
+      "sha256": "45093DFA6FEACD1E1033D85C84D4A6CE87CD9EA2AC9ACFDC7DC5CCDD2E52FA15"
+    },
+    {
+      "path": "src/pages/ButtonsPage.vue",
+      "bytes": 64907,
+      "sha256": "AA3653D3F37439F76C7C360D4DA238316D569173D8BCB62739C4D7AEFB711B62"
+    },
+    {
+      "path": "src/pages/ConnectionPage.test.ts",
+      "bytes": 5607,
+      "sha256": "8D4E8D8D11E33DC15E79CC895F8F1D2D5E133AE45120E0CBD2333D0333488F65"
+    },
+    {
+      "path": "src/pages/ConnectionPage.vue",
+      "bytes": 18483,
+      "sha256": "1E89F886D6EF86C7AEDBBADB33ED14CE62256C2306FA7B9C2FFBA289B9107249"
+    },
+    {
+      "path": "src/pages/PermissionsPage.test.ts",
+      "bytes": 2098,
+      "sha256": "2FA219FC5BD96A8043503F3ACB18F2FF8CCA35162220345C52F7286DEBB5ABE3"
+    },
+    {
+      "path": "src/pages/PermissionsPage.vue",
+      "bytes": 2228,
+      "sha256": "6BDB0E9DE31D85933F0C8BBB961227F53E26DDCEDBC67085D63FDE103AABD0DA"
+    },
+    {
+      "path": "src/pages/return-volume-independent.test.ts",
+      "bytes": 4313,
+      "sha256": "5D5567317D196850343228FEDA31D5172EC67B4F2978FF37C955D2A861550C1A"
+    },
+    {
+      "path": "src/pages/SettingsPage.vue",
+      "bytes": 472,
+      "sha256": "2F137227B03627D6DDB0A28C772226C76918319D4A27F45E92468197F4658CBB"
+    },
+    {
+      "path": "src/runtime-simulation.ts",
+      "bytes": 8270,
+      "sha256": "5BFC547834A730C5755A2F0285EEA341306062BBE63E5EC115A259499A746C93"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 28967,
+      "sha256": "7A543CF5422EBA0A1AF7DF8664E8BD45905197D34D88816766D3A859FFF7DEEF"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1382,
+      "sha256": "5A3F932B4FAC4A9A9F725BE62675E69C77D36A366D43526EB874054B4A676D6C"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 448,
+      "sha256": "91D4AFE0FF8344617A7AB1B1EA4387437970FD6F91C4CB2975C58CB8BD8D2EAD"
+    },
+    {
+      "path": "VERSION_BUILD_INFO.json",
+      "bytes": 1638,
+      "sha256": "9B75DD44F6A60844095A09AC1988AA155C7BB032956A1652F3709D2E071B3A7A"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 509,
+      "sha256": "F3FB964C6CF0BDF580F465C12A7D185330861B53A31651F6F17B012798262800"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 215,
+      "sha256": "124D9633F9AF56159A6EE8F41955F12F52E9B54DF604EA1C76EE1C0078007E82"
+    }
+  ],
+  "frozen20": {
+    "report": "D:\\d\\ditanchengxu\\.analysis-output\\micontrol-rc003\\candidate-build-2.0.7-rc1-report.json",
+    "traceRunId": "20261013T145717033Z-bcce0632",
+    "expectedCount": 20,
+    "comparison": [
+      {
+        "path": "crates/micontrol-windows/src/hid_tap_service.rs",
+        "expectedBytes": 237200,
+        "actualBytes": 237200,
+        "expectedSha256": "F5CB72FF200B75574233B6BFD8D837CE4EC9D2AB81C01518B3358A03C0FEB361",
+        "actualSha256": "F5CB72FF200B75574233B6BFD8D837CE4EC9D2AB81C01518B3358A03C0FEB361",
+        "status": "MATCH"
+      },
+      {
+        "path": "crates/micontrol-windows/src/hid_tap_windows.rs",
+        "expectedBytes": 83493,
+        "actualBytes": 83493,
+        "expectedSha256": "D4222E5B2E9971C85418B793D868FFCBDE532467F50295B668688C45D7EED71A",
+        "actualSha256": "D4222E5B2E9971C85418B793D868FFCBDE532467F50295B668688C45D7EED71A",
+        "status": "MATCH"
+      },
+      {
+        "path": "src-tauri/src/hid_tap_service.rs",
+        "expectedBytes": 27664,
+        "actualBytes": 27664,
+        "expectedSha256": "4C50A302D3B30D750359BCEAF7E7893B4E671E574F8035CE6FFDAEB639FFB9D6",
+        "actualSha256": "4C50A302D3B30D750359BCEAF7E7893B4E671E574F8035CE6FFDAEB639FFB9D6",
+        "status": "MATCH"
+      },
+      {
+        "path": "crates/micontrol-windows/src/installer_compat.rs",
+        "expectedBytes": 39915,
+        "actualBytes": 39915,
+        "expectedSha256": "47F121A2A30D596038F925D8A2B5646144C10CAA468203A1CECFA0CB5A8B0007",
+        "actualSha256": "47F121A2A30D596038F925D8A2B5646144C10CAA468203A1CECFA0CB5A8B0007",
+        "status": "MATCH"
+      },
+      {
+        "path": "crates/micontrol-windows/src/bin/micontrol-service-cleanup.rs",
+        "expectedBytes": 7442,
+        "actualBytes": 7442,
+        "expectedSha256": "21E9FB809E1E1187502A6349AF9D08191137EC9789C99073BDA43E2C32D14DB5",
+        "actualSha256": "21E9FB809E1E1187502A6349AF9D08191137EC9789C99073BDA43E2C32D14DB5",
+        "status": "MATCH"
+      },
+      {
+        "path": "crates/micontrol-windows/src/send_input.rs",
+        "expectedBytes": 39967,
+        "actualBytes": 39967,
+        "expectedSha256": "9D1B28FC8B1EBE332C1F3CC60A3504E6702C9138A650071C0100485465FAFBB7",
+        "actualSha256": "9D1B28FC8B1EBE332C1F3CC60A3504E6702C9138A650071C0100485465FAFBB7",
+        "status": "MATCH"
+      },
+      {
+        "path": "crates/micontrol-windows/src/button_mapping.rs",
+        "expectedBytes": 66764,
+        "actualBytes": 66764,
+        "expectedSha256": "9ECB1D675B6FC524175B92BDB307CF9199FDB5AD9176F030FF0CFEA4DCAA5C07",
+        "actualSha256": "9ECB1D675B6FC524175B92BDB307CF9199FDB5AD9176F030FF0CFEA4DCAA5C07",
+        "status": "MATCH"
+      },
+      {
+        "path": "src-tauri/src/settings.rs",
+        "expectedBytes": 23033,
+        "actualBytes": 23033,
+        "expectedSha256": "C977088718C82E612296377360F0C4D4B3672F8E4187E072EE2330DBF6AAB659",
+        "actualSha256": "C977088718C82E612296377360F0C4D4B3672F8E4187E072EE2330DBF6AAB659",
+        "status": "MATCH"
+      },
+      {
+        "path": "src-tauri/src/main.rs",
+        "expectedBytes": 236,
+        "actualBytes": 236,
+        "expectedSha256": "DE9751B1EFDD3A90F3275C095A842B1C4CCDEC6A703F592BE2392A5C5E173652",
+        "actualSha256": "DE9751B1EFDD3A90F3275C095A842B1C4CCDEC6A703F592BE2392A5C5E173652",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/pages/ButtonsPage.vue",
+        "expectedBytes": 64907,
+        "actualBytes": 64907,
+        "expectedSha256": "AA3653D3F37439F76C7C360D4DA238316D569173D8BCB62739C4D7AEFB711B62",
+        "actualSha256": "AA3653D3F37439F76C7C360D4DA238316D569173D8BCB62739C4D7AEFB711B62",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/pages/ButtonsPage.test.ts",
+        "expectedBytes": 31767,
+        "actualBytes": 31767,
+        "expectedSha256": "45093DFA6FEACD1E1033D85C84D4A6CE87CD9EA2AC9ACFDC7DC5CCDD2E52FA15",
+        "actualSha256": "45093DFA6FEACD1E1033D85C84D4A6CE87CD9EA2AC9ACFDC7DC5CCDD2E52FA15",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/pages/return-volume-independent.test.ts",
+        "expectedBytes": 4313,
+        "actualBytes": 4313,
+        "expectedSha256": "5D5567317D196850343228FEDA31D5172EC67B4F2978FF37C955D2A861550C1A",
+        "actualSha256": "5D5567317D196850343228FEDA31D5172EC67B4F2978FF37C955D2A861550C1A",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/lib/bridge.ts",
+        "expectedBytes": 26073,
+        "actualBytes": 26073,
+        "expectedSha256": "06D0A98CED9A078443D879A0712DFA162084EFD52BBAF0D3E44C665A0AC052F8",
+        "actualSha256": "06D0A98CED9A078443D879A0712DFA162084EFD52BBAF0D3E44C665A0AC052F8",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/lib/bridge.test.ts",
+        "expectedBytes": 5176,
+        "actualBytes": 5176,
+        "expectedSha256": "33D8DC2FF8E5F864606E440FC2B3FF1DB707D79C46BE5EB5206C4757BCAC906F",
+        "actualSha256": "33D8DC2FF8E5F864606E440FC2B3FF1DB707D79C46BE5EB5206C4757BCAC906F",
+        "status": "MATCH"
+      },
+      {
+        "path": "src-tauri/windows/installer-hooks.nsh",
+        "expectedBytes": 16467,
+        "actualBytes": 16467,
+        "expectedSha256": "EF52DD03E5FD16C44124369451857EE2A895E98CA3D5A0FB98761A0C9DB467B7",
+        "actualSha256": "EF52DD03E5FD16C44124369451857EE2A895E98CA3D5A0FB98761A0C9DB467B7",
+        "status": "MATCH"
+      },
+      {
+        "path": "scripts/build-micontrol-candidate.ps1",
+        "expectedBytes": 30734,
+        "actualBytes": 30734,
+        "expectedSha256": "5A26896222FDA4C8A54FA3D0F19039173298CA374774DA4BEEF3AB97C6964A3B",
+        "actualSha256": "5A26896222FDA4C8A54FA3D0F19039173298CA374774DA4BEEF3AB97C6964A3B",
+        "status": "MATCH"
+      },
+      {
+        "path": "src-tauri/tauri.conf.json",
+        "expectedBytes": 1949,
+        "actualBytes": 1949,
+        "expectedSha256": "3E3CA36CC47CD1BE4FAB4BA0925FC00DC084D2BE8A4560FD7BEA15C421D99937",
+        "actualSha256": "3E3CA36CC47CD1BE4FAB4BA0925FC00DC084D2BE8A4560FD7BEA15C421D99937",
+        "status": "MATCH"
+      },
+      {
+        "path": "package.json",
+        "expectedBytes": 759,
+        "actualBytes": 759,
+        "expectedSha256": "0B7C71E497448AF830894751AB952ED8B5C49A3BB754A84C339AB81F5A8967C8",
+        "actualSha256": "0B7C71E497448AF830894751AB952ED8B5C49A3BB754A84C339AB81F5A8967C8",
+        "status": "MATCH"
+      },
+      {
+        "path": "Cargo.toml",
+        "expectedBytes": 532,
+        "actualBytes": 532,
+        "expectedSha256": "A5252673D9EC5CCA90C7B6E247F7CE70211354DF838F2394041214249C512289",
+        "actualSha256": "A5252673D9EC5CCA90C7B6E247F7CE70211354DF838F2394041214249C512289",
+        "status": "MATCH"
+      },
+      {
+        "path": "Cargo.lock",
+        "expectedBytes": 124756,
+        "actualBytes": 124756,
+        "expectedSha256": "B60DD590A1349FF735C861E4982CDF707DE0D970E7A4A049D7455D211F1B0158",
+        "actualSha256": "B60DD590A1349FF735C861E4982CDF707DE0D970E7A4A049D7455D211F1B0158",
+        "status": "MATCH"
+      }
+    ],
+    "driftCount": 0
+  },
+  "associatedSetup": {
+    "fileName": "MiControl_2.0.7-rc1_x64-setup.exe",
+    "sha256": "083B44F35B05A1320149DFAFDC8A6993A232D64E33C87F6D13DE3B99AE407A7E",
+    "bytes": 11121136
+  },
+  "exclusions": [
+    "target/",
+    "target-candidate-*/",
+    "node_modules/",
+    "dist/",
+    "src-tauri/gen/",
+    "*.exe",
+    "*.msi",
+    "*.zip",
+    "*.log",
+    "*.pfx",
+    "*.p12",
+    "*.cer",
+    "*.key",
+    "*.pem",
+    ".env*",
+    "credentials.json",
+    "*-secret.*",
+    "coverage/",
+    ".git/",
+    ".idea/",
+    ".vscode/",
+    ".playwright-cli/",
+    ".workbuddy/",
+    "__pycache__/",
+    "unrelated large files"
+  ],
+  "notes": [
+    "Generated source manifest includes all files under packageRoot except SOURCE_MANIFEST.json itself to avoid recursive self-hash.",
+    "The 20 frozen build inputs were compared against current repository hashes before staging.",
+    "frida-gadget.dll and its license are included because they are required build inputs."
+  ]
+}
