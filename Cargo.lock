@@ -2053,7 +2053,7 @@ dependencies = [
 
 [[package]]
 name = "micontrol-core"
-version = "2.0.7"
+version = "2.0.8"
 dependencies = [
  "serde",
  "serde_json",
@@ -2062,7 +2062,7 @@ dependencies = [
 
 [[package]]
 name = "micontrol-windows"
-version = "2.0.7"
+version = "2.0.8"
 dependencies = [
  "futures",
  "micontrol-core",
@@ -2077,7 +2077,7 @@ dependencies = [
 
 [[package]]
 name = "micontrol-windows-app"
-version = "2.0.7"
+version = "2.0.8"
 dependencies = [
  "micontrol-core",
  "micontrol-windows",

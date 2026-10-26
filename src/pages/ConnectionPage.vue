@@ -254,13 +254,21 @@ async function detectAudioEndpoints(autoSelectVirtualCable: boolean) {
     const virtualCables = audioEndpoints.value.filter(
       (endpoint) => endpoint.isVirtualCableCandidate,
     );
-    if (virtualCables.length === 1 && autoSelectVirtualCable && !audio.value.selectedEndpointId) {
-      await chooseAudioEndpoint(virtualCables[0], true);
+    const preferredVirtualCable =
+      virtualCables.find((endpoint) => /^cable input(?:\s|\()/i.test(endpoint.name)) ??
+      virtualCables[0];
+    if (
+      virtualCables.length === 1 &&
+      preferredVirtualCable &&
+      autoSelectVirtualCable &&
+      !audio.value.selectedEndpointId
+    ) {
+      await chooseAudioEndpoint(preferredVirtualCable, true);
       return;
     }
     audioMessage.value = virtualCables.length
-      ? `已检测到 ${virtualCables.length} 个 VB-CABLE 语音设备`
-      : "未检测到 VB-CABLE；安装完成后需要重启电脑，再重新检测";
+      ? `已检测到 ${virtualCables.length} 个标准 CABLE Input 语音设备`
+      : "未检测到标准 CABLE Input；当前的 16 通道或普通扬声器端点不能代替它";
   } catch (error) {
     audioEndpoints.value = [];
     audioScanComplete.value = true;
@@ -476,11 +484,15 @@ onUnmounted(() => {
           <li v-for="endpoint in audioEndpoints" :key="endpoint.id">
             <div>
               <strong>{{ endpoint.name }}</strong>
-              <small>{{ endpoint.isVirtualCableCandidate ? "推荐（微信输入法等语音工具使用）" : "其他音频设备" }}</small>
+            <small>{{ endpoint.isVirtualCableCandidate ? "推荐：标准 CABLE Input（实际设备名称见上方）" : "其他音频设备" }}</small>
             </div>
             <button
               type="button"
-              :disabled="audioBusy || Boolean(selectingEndpointId) || audio.selectedEndpointId === endpoint.id"
+              :disabled="
+                audioBusy ||
+                Boolean(selectingEndpointId) ||
+                (audio.selectedEndpointId === endpoint.id && audio.phase !== 'failed')
+              "
               @click="chooseAudioEndpoint(endpoint)"
             >
               {{
@@ -503,8 +515,8 @@ onUnmounted(() => {
 
         <div v-if="audioScanComplete && !virtualCableInstalled" class="info-callout warning vb-cable-callout">
           <div>
-            <strong>需要安装 VB-CABLE</strong>
-            <p>由 VB-Audio 提供的免费虚拟声卡。安装需要管理员权限，完成后需重启电脑。</p>
+            <strong>需要启用标准 CABLE Input</strong>
+            <p>当前只检测到其他端点（例如 16 通道端点），不能代替标准 CABLE Input。请恢复或安装 VB-CABLE 标准端点后重新检测。</p>
           </div>
           <div class="button-row">
             <button class="primary-button" type="button" :disabled="openingVbCablePage" @click="openVbCablePage">

@@ -1,5 +1,18 @@
 # MiControl
 
+## 2.0.8 正式版说明
+
+本版本整合了标准 `CABLE Input` 选择与语音按住输入稳定性修复：
+
+- 音频设备列表优先识别真实标准 `CABLE Input` 端点；16ch 端点、泛化的 VB-Audio 扬声器端点不会被静默当作标准端。多个标准候选时保留人工选择。
+- 保存的端点恢复失败时可重新选择同一设备，避免旧设备 ID 让选择按钮永久不可用。
+- 语音 Streaming 期间不再因 WeType 状态探测误报而重启输入法或重发 Ctrl+Win，防止按键仍按住时输入窗口被切换关闭。
+- 正式 Tauri 构建启用 `custom-protocol`；发布安装包不依赖 `localhost:2430` 开发服务器。
+
+已知限制：遥控器固件对单段语音约有 60 秒上限，长内容请分段说。本版本保留设备发出的停止语义，不在收到停止后强行重开输入法或续录，以免丢字或重复提交。
+
+正式版构建与测试证据见 [RELEASE_NOTES_2.0.8.md](RELEASE_NOTES_2.0.8.md)、[RELEASE_MANIFEST.json](RELEASE_MANIFEST.json) 和 [TEST_REPORT.md](TEST_REPORT.md)。
+
 ## 2.0.7-rc1 发布说明
 
 MiControl 是面向 Windows 的小米 RC001 / RC003 蓝牙语音遥控器桥接工具：它提供遥控器按键映射、语音输入桥接和设备连接管理，适合把遥控器接入 Windows 工作站或展陈控制终端。

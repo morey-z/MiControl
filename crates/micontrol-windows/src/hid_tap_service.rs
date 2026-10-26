@@ -4293,12 +4293,6 @@ mod tests {
         assert!(!descriptor.contains("(A;;LCRPDC"));
     }
 
-    // This is deliberately a fixed, opt-in escape hatch for the residue from
-    // the failed elevated QA run.  Do not generalise this into a TEMP glob:
-    // recovery must validate the exact tree before any recursive delete.
-    const KNOWN_ACL_QA_RESIDUE: &str =
-        r"C:\Users\Lenovo\AppData\Local\Temp\MiControl-acl-qa-8648-1791638186987972500";
-
     fn open_fixture_security_handle(path: &Path, directory: bool) -> Result<OwnedHandle, String> {
         use windows::Win32::Storage::FileSystem::{
             FILE_FLAG_BACKUP_SEMANTICS, FILE_FLAG_OPEN_REPARSE_POINT,
@@ -5520,49 +5514,6 @@ mod tests {
         result.expect("普通 TEMP junction unlink fixture failed");
     }
 
-    fn cleanup_known_acl_qa_residue() -> Result<(), String> {
-        let root = PathBuf::from(KNOWN_ACL_QA_RESIDUE);
-        let outside = root.with_file_name(format!(
-            "{}-outside",
-            root.file_name()
-                .ok_or("已知残留路径没有文件名")?
-                .to_string_lossy()
-        ));
-        match std::fs::symlink_metadata(&root) {
-            Ok(metadata) => {
-                if is_reparse_point(&metadata) || !metadata.is_dir() {
-                    return Err(format!(
-                        "拒绝清理已知残留：root 不是普通目录：{}",
-                        root.display()
-                    ));
-                }
-                validate_managed_tree_for_recovery(&root)?;
-                restore_administrator_maintenance(&root)?;
-                validate_managed_tree(&root)?;
-                std::fs::remove_dir_all(&root)
-                    .map_err(|error| format!("已知残留 root 删除失败：{error}"))?;
-            }
-            Err(error) if error.kind() == std::io::ErrorKind::NotFound => {}
-            Err(error) => return Err(format!("读取已知残留 root 失败：{error}")),
-        }
-        match std::fs::symlink_metadata(&outside) {
-            Ok(metadata) => {
-                if is_reparse_point(&metadata) || !metadata.is_dir() {
-                    return Err(format!(
-                        "拒绝清理已知残留：outside 不是普通目录：{}",
-                        outside.display()
-                    ));
-                }
-                validate_managed_tree(&outside)?;
-                std::fs::remove_dir_all(&outside)
-                    .map_err(|error| format!("已知残留 outside 删除失败：{error}"))?;
-            }
-            Err(error) if error.kind() == std::io::ErrorKind::NotFound => {}
-            Err(error) => return Err(format!("读取已知残留 outside 失败：{error}")),
-        }
-        Ok(())
-    }
-
     #[test]
     fn acl_qa_gate_and_child_path_validation_are_fail_closed() {
         assert!(require_acl_qa_gate_value(None).is_err());
@@ -5605,10 +5556,6 @@ mod tests {
                 .unwrap_or_else(|error| panic!("ACL QA 子进程 protect2 失败：{error}"));
             eprintln!("ACL QA stage passed: stage=child_protect2");
             return;
-        }
-        if std::env::var("MICONTROL_ACL_QA_CLEANUP_RESIDUE").as_deref() == Ok("1") {
-            cleanup_known_acl_qa_residue()
-                .unwrap_or_else(|error| panic!("已知 ACL QA 残留安全清理失败：{error}"));
         }
         let root = std::env::temp_dir().join(format!(
             "MiControl-acl-qa-{}-{}",

@@ -1,43 +1,23 @@
 {
   "product": "MiControl",
-  "version": "2.0.7",
-  "candidateLabel": "rc1",
-  "sourcePackageKind": "complete-development-source",
-  "sourceRepository": "D:\\d\\MiControl-source\\Lucasmantou-MiControl-b445dc1",
-  "repositoryHasGitSnapshot": false,
-  "buildEvidence": {
-    "status": "static-build-passed",
-    "builtAt": "2026-10-13T23:01:36.0045118+08:00",
-    "traceRunId": "20261013T145717033Z-bcce0632",
-    "traceArchive": "D:\\d\\ditanchengxu\\.analysis-output\\micontrol-rc003\\candidate-build-2.0.7-run-20261013T145717033Z-bcce0632",
-    "buildReport": "D:\\d\\ditanchengxu\\.analysis-output\\micontrol-rc003\\candidate-build-2.0.7-rc1-report.json",
-    "frozenSourceFileCount": 20,
-    "frozenSourceHashDrift": [],
-    "setupArtifact": {
-      "fileName": "MiControl_2.0.7-rc1_x64-setup.exe",
-      "sha256": "083B44F35B05A1320149DFAFDC8A6993A232D64E33C87F6D13DE3B99AE407A7E",
-      "bytes": 11121136
-    }
-  },
-  "versionMetadata": {
-    "packageJson": "2.0.7",
-    "tauriConfig": "2.0.7",
-    "cargoWorkspace": "2.0.7",
-    "micontrolCore": "2.0.7",
-    "micontrolWindows": "2.0.7",
-    "micontrolWindowsApp": "2.0.7"
-  },
-  "packageVerification": {
-    "sourceArchiveBuilt": false,
-    "sourceArchiveBitIdenticalToSetup": false,
-    "productBuildReexecuted": false,
-    "fieldInstallOrHardwareAcceptance": false,
-    "sourceManifestSelfExcluded": true
-  },
-  "requiredLocalBuildInput": {
-    "path": "src-tauri/resources/hid-tap/frida-gadget.dll",
-    "sha256": "6FCA4007B2284C765A6C15C967A741F536B5865BF83867326A54029A3B752748",
-    "bytes": 23575552,
-    "licenseFile": "src-tauri/resources/hid-tap/frida-COPYING.txt"
+  "version": "2.0.8",
+  "repository": "https://github.com/morey-z/MiControl",
+  "baseRevision": "ce5a9de934c95062a6bc303cc22b44a0e1cfb63f",
+  "buildChannel": "stable",
+  "productionFeature": "custom-protocol",
+  "packageManager": "pnpm@10.15.0",
+  "sourceManifest": "SOURCE_MANIFEST.json",
+  "buildCommands": [
+    "corepack pnpm install --frozen-lockfile",
+    "corepack pnpm build",
+    "cargo build --manifest-path crates/micontrol-windows/Cargo.toml --bin micontrol-service-cleanup --release",
+    "corepack pnpm tauri build"
+  ],
+  "artifactHashes": "See the release package RELEASE_MANIFEST.json; source metadata does not embed machine-local artifact paths.",
+  "verificationBoundary": {
+    "sourceAndStaticTests": true,
+    "installerBuild": true,
+    "hardwareAndBluetoothAcceptance": "Previously verified on the accepted rc4 build; not repeated by packaging.",
+    "continuousSpeechBeyondFirmwareLimit": false
   }
 }

@@ -1,10 +1,9 @@
-MiControl 2.0.7-rc1 源码交付说明
+MiControl 2.0.8 源码交付说明
 ================================
 
-本目录是可开发、可构建的源码包，顶层目录名为 MiControl-2.0.7-rc1-source。
-它对应静态构建证据中的 MiControl_2.0.7-rc1_x64-setup.exe，安装包 SHA-256 为：
-083B44F35B05A1320149DFAFDC8A6993A232D64E33C87F6D13DE3B99AE407A7E。
-安装包构建报告记录的 20 个冻结源文件在打包前后均无哈希漂移。
+本目录是可开发、可构建的 MiControl 2.0.8 源码包。
+正式安装包、主程序和源码 ZIP 的实际 SHA-256 由发布包中的 RELEASE_MANIFEST.json
+和 SHA256SUMS 记录；本源码文件不嵌入某台电脑的绝对路径或用户配置。
 
 源码布局
 --------
@@ -19,14 +18,12 @@ Cargo.lock/pnpm-lock.yaml
 构建前置
 --------
 * Windows 10 1809（build 17763）或更高版本。
-* Node.js 20+；项目 package.json 声明 pnpm@10.15.0。建议使用 Corepack 固定该版本，
-  当前打包环境的 pnpm 11.25.0 仅作为环境读数，未用它重跑产品构建。
+* Node.js 20+；项目 package.json 声明 pnpm@10.15.0，建议使用 Corepack 固定该版本。
 * Rust MSVC toolchain、Cargo、Visual Studio C++ Build Tools（MSVC、Windows SDK）。
   cl.exe 必须在开发者命令行或等价环境中可用；打包时未在 PATH 中发现 cl.exe。
 * Tauri 2 所需 WebView2 Runtime。安装包配置为 downloadBootstrapper；离线交付应预置
   WebView2 Runtime。打包环境注册表读数为 155.0.4283.45，不能替代现场验收。
-* NSIS/makensis 由 Tauri CLI 管理；候选静态审计另使用支持 NSIS 的 7-Zip 26.03，
-  其 exe/dll 哈希见 scripts/build-micontrol-candidate.ps1 与原 build report。
+* NSIS/makensis 由 Tauri CLI 管理；正式包使用 production custom-protocol 构建。
 * 首次构建需要从 crates.io、npm registry 和 Tauri 依赖源下载 Cargo/pnpm 依赖；本包
   不包含 node_modules、Cargo target 或 pnpm store。
 
@@ -44,17 +41,9 @@ Cargo.lock/pnpm-lock.yaml
 
 pnpm tauri build 的 beforeBuildCommand 会先运行 pnpm build，再编译
 crates/micontrol-windows 中的 micontrol-service-cleanup helper；默认输出在 target/。
-需要复现 2.0.7-rc1 静态候选审计时，使用：
-
-  powershell -ExecutionPolicy Bypass -File .\\scripts\\build-micontrol-candidate.ps1 `
-    -Version 2.0.7 -CandidateLabel rc1 `
-    -TargetDirectory .\\target-candidate-2.0.7-rc1 `
-    -ReportPath .\\candidate-build-2.0.7-rc1-report.json `
-    -NsisExtractorPath <path-to-7z.exe>
-
-脚本会使用自身所在仓库根目录解析相对路径，并要求候选 target-candidate-2.0.7-rc1
-目录；不要把现有 target/ 或生产目录作为 TargetDirectory。脚本的临时 config、NSIS
-hook 和 report 只属于一次构建，不会被本源码包预填。
+正式构建使用 `pnpm tauri build`；其 beforeBuildCommand 会先生成前端和
+micontrol-service-cleanup helper，生产 feature 由 `src-tauri/Cargo.toml` 的
+`custom-protocol` 启用。不要直接使用不带该 feature 的开发 cargo 构建作为正式包。
 
 本地资源与可移植性
 ------------------
@@ -68,9 +57,10 @@ frida-gadget.dll 是构建输入，不应删除或替换。它的 SHA-256 为
 frida-COPYING.txt。若重新获取资源，使用 scripts/fetch-hid-tap.ps1 并核对脚本内的
 下载归档和解压后哈希；该过程需要网络和 Python 3。
 
-证据边界
---------
-原 2.0.7-rc1 证据只完成构建产物与静态 payload 绑定校验，未完成新机安装、UAC、SCM、
-真实服务、硬件或现场验收。本源码包没有宣称 bit-identical 重建；需在目标环境重新执行
-构建并保存完整参数、工具版本、产物和哈希后再作该结论。SOURCE_MANIFEST.json 列出本包
+已知限制与证据边界
+------------------
+遥控器单段语音约有 60 秒的设备/固件上限，长内容请分段；本版不自动续录或强制重开
+输入法。此前 rc4 已完成标准 CABLE Input 选择、保存、重启恢复和共享开流验收；本次
+正式打包不覆盖安装目录，也不重复硬件操作。源码级测试、安装包构建与既有设备验收不
+等同于任意新电脑上的安装、蓝牙或长期连续转写验收。SOURCE_MANIFEST.json 列出本包
 每个文件的相对路径、字节数和 SHA-256；为避免自引用，清单文件自身不计入 entries。

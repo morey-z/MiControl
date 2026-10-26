@@ -1,6 +1,6 @@
 {
   "name": "micontrol-windows",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.15.0",

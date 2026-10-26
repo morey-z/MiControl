@@ -779,7 +779,21 @@ pub fn remote_model_from_model_number(model_number: &str) -> Option<RemoteModel>
 
 pub fn is_virtual_cable_output_name(raw_name: &str) -> bool {
     let normalized = raw_name.trim().to_lowercase();
-    normalized.contains("cable input") || normalized.contains("vb-audio virtual cable")
+    // VB-CABLE exposes several render endpoints. The 16-channel endpoint and
+    // generic speaker endpoints are valid WASAPI devices, but they are not the
+    // standard 2-channel CABLE Input that the speech-input route requires.
+    // Windows may localize the friendly name to “扬声器”/“Speakers”, so use the
+    // endpoint role together with the driver name instead of an English-only
+    // exact match.
+    if !normalized.contains("vb-audio virtual cable")
+        || normalized.contains("16 ch")
+        || normalized.contains("16ch")
+    {
+        return false;
+    }
+
+    let role = normalized.split('(').next().unwrap_or_default().trim();
+    matches!(role, "cable input" | "speakers" | "扬声器")
 }
 
 #[cfg(windows)]
@@ -924,7 +938,13 @@ mod tests {
         assert!(is_virtual_cable_output_name(
             "CABLE Input (VB-Audio Virtual Cable)"
         ));
-        assert!(is_virtual_cable_output_name("VB-Audio Virtual Cable"));
+        assert!(is_virtual_cable_output_name(
+            "扬声器 (2- VB-Audio Virtual Cable)"
+        ));
+        assert!(!is_virtual_cable_output_name(
+            "CABLE In 16 Ch (2- VB-Audio Virtual Cable)"
+        ));
+        assert!(!is_virtual_cable_output_name("VB-Audio Virtual Cable"));
         assert!(!is_virtual_cable_output_name("Speakers (Realtek Audio)"));
     }
 

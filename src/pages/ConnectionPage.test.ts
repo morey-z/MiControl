@@ -68,6 +68,12 @@ const cableEndpoint: AudioEndpoint = {
   isVirtualCableCandidate: true,
 };
 
+const localizedCableEndpoint: AudioEndpoint = {
+  id: "localized-cable-input",
+  name: "扬声器 (2- VB-Audio Virtual Cable)",
+  isVirtualCableCandidate: true,
+};
+
 const mocks = vi.hoisted(() => ({
   endpoints: [] as AudioEndpoint[],
   getConnectionSnapshot: vi.fn(),
@@ -134,6 +140,15 @@ describe("VB-CABLE first-launch guidance", () => {
     wrapper.unmount();
   });
 
+  it("does not silently choose between multiple standard endpoints", async () => {
+    mocks.endpoints = [localizedCableEndpoint, cableEndpoint];
+    const wrapper = mount(ConnectionPage, { props: { runtime } });
+    await flushPromises();
+
+    expect(mocks.selectAudioEndpoint).not.toHaveBeenCalled();
+    wrapper.unmount();
+  });
+
   it("waits for the saved endpoint and does not replace an existing selection", async () => {
     const savedAudio: AudioSnapshot = {
       ...emptyAudio,
@@ -162,13 +177,37 @@ describe("VB-CABLE first-launch guidance", () => {
     wrapper.unmount();
   });
 
+  it("allows reselecting the same endpoint after restoring a stale saved identity", async () => {
+    const failedAudio: AudioSnapshot = {
+      ...emptyAudio,
+      phase: "failed",
+      selectedEndpointId: cableEndpoint.id,
+      selectedEndpointName: "旧的 CABLE Input",
+      lastError: "上次选择的输出端点当前不可用，请重新选择",
+    };
+    mocks.endpoints = [cableEndpoint];
+    mocks.getAudioSnapshot.mockResolvedValue(failedAudio);
+
+    const wrapper = mount(ConnectionPage, { props: { runtime } });
+    await flushPromises();
+    await wrapper.findAll(".endpoint-select-row button")[0].trigger("click");
+    await flushPromises();
+
+    const endpointButton = wrapper.find(".endpoint-list button");
+    expect(endpointButton.attributes("disabled")).toBeUndefined();
+    await endpointButton.trigger("click");
+    await flushPromises();
+    expect(mocks.selectAudioEndpoint).toHaveBeenCalledWith(cableEndpoint.id);
+    wrapper.unmount();
+  });
+
   it("shows the official installation action when VB-CABLE is unavailable", async () => {
     const wrapper = mount(ConnectionPage, { props: { runtime } });
     await flushPromises();
 
     expect(mocks.selectAudioEndpoint).not.toHaveBeenCalled();
-    expect(wrapper.text()).toContain("需要安装 VB-CABLE");
-    expect(wrapper.text()).toContain("完成后需重启电脑");
+    expect(wrapper.text()).toContain("需要启用标准 CABLE Input");
+    expect(wrapper.text()).toContain("当前只检测到其他端点");
 
     await wrapper.get(".vb-cable-callout .primary-button").trigger("click");
     await flushPromises();
