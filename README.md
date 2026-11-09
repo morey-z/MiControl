@@ -2,6 +2,8 @@
 
 ## 2.0.8 正式版说明
 
+**下载 2.0.8 正式版：** [Windows x64 安装包（MiControl_2.0.8_x64-setup.exe）](https://github.com/morey-z/MiControl/releases/download/v2.0.8/MiControl_2.0.8_x64-setup.exe)。源码归档、校验文件和完整发布资料见 [`v2.0.8` Release](https://github.com/morey-z/MiControl/releases/tag/v2.0.8)。
+
 本版本整合了标准 `CABLE Input` 选择与语音按住输入稳定性修复：
 
 - 音频设备列表优先识别真实标准 `CABLE Input` 端点；16ch 端点、泛化的 VB-Audio 扬声器端点不会被静默当作标准端。多个标准候选时保留人工选择。
@@ -11,9 +13,9 @@
 
 已知限制：遥控器固件对单段语音约有 60 秒上限，长内容请分段说。本版本保留设备发出的停止语义，不在收到停止后强行重开输入法或续录，以免丢字或重复提交。
 
-正式版构建与测试证据见 [RELEASE_NOTES_2.0.8.md](RELEASE_NOTES_2.0.8.md)、[RELEASE_MANIFEST.json](RELEASE_MANIFEST.json) 和 [TEST_REPORT.md](TEST_REPORT.md)。
+正式版构建与测试证据见 [RELEASE_NOTES_2.0.8.md](RELEASE_NOTES_2.0.8.md)、[RELEASE_MANIFEST.json](https://github.com/morey-z/MiControl/releases/download/v2.0.8/RELEASE_MANIFEST.json) 和 [TEST_REPORT.md](TEST_REPORT.md)。
 
-## 2.0.7-rc1 发布说明
+## 历史版本：2.0.7-rc1 发布说明
 
 MiControl 是面向 Windows 的小米 RC001 / RC003 蓝牙语音遥控器桥接工具：它提供遥控器按键映射、语音输入桥接和设备连接管理，适合把遥控器接入 Windows 工作站或展陈控制终端。
 
@@ -23,7 +25,7 @@ MiControl 是面向 Windows 的小米 RC001 / RC003 蓝牙语音遥控器桥接�
 - 安装器兼容逻辑支持带 operation id 的新参数形态，同时保留旧参数形态，拒绝非法参数和不匹配的 helper 路径。
 - 安装、服务和诊断路径补充阶段化错误日志，便于区分参数校验、权限、helper、SCM 和 broker health 阶段。
 
-安装包和源码归档从本仓库的 [`v2.0.7-rc1` Release](https://github.com/morey-z/MiControl/releases/tag/v2.0.7-rc1) 页面下载：
+历史预发布版的安装包和源码归档从本仓库的 [`v2.0.7-rc1` Release](https://github.com/morey-z/MiControl/releases/tag/v2.0.7-rc1) 页面下载：
 
 - `MiControl_2.0.7-rc1_x64-setup.exe`（SHA-256：`083B44F35B05A1320149DFAFDC8A6993A232D64E33C87F6D13DE3B99AE407A7E`）
 - `MiControl_2.0.7-rc1_Source.zip`（SHA-256：`B87C0A760F77F8939A5858C6680D1850D605FFBFCD495B2589EB591007246B10`）
